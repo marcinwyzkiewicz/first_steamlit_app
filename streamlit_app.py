@@ -25,7 +25,7 @@ streamlit.text('Hard-Boiled Free-Range Egg')
 
 streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-streamlit.write('The user entered ', fruit_choice)
+streamlit.write('The user entered ', fruit_choice, add_my_fruit)
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
@@ -42,3 +42,7 @@ my_cur.execute("select * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.text("The ftuit list contains:")
 streamlit.text(my_data_rows)
+
+#add new fruit
+
+add_my_fruit = streamlit.text_input('Add Fruit?')
